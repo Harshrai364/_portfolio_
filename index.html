@@ -36,7 +36,6 @@
   --input-bg: #FFFFFF;
   --input-border: #eeeeee;
   --nav-bg: rgba(27, 36, 48, 0.95);
-  --skill-bar-bg: rgba(255, 255, 255, 0.08);
   --skill-cat-bg: rgba(255, 255, 255, 0.04);
   --skill-cat-border: rgba(255, 255, 255, 0.06);
   --cert-card-bg: rgba(255, 255, 255, 0.04);
@@ -894,6 +893,10 @@ body.dark-mode .theme-toggle-btn .icon-moon {
   color: var(--text-light);
 }
 
+.skills-section .section-title {
+  margin-bottom: 28px;
+}
+
 .skills-section .section-title h2 {
   color: var(--text-light);
 }
@@ -904,105 +907,77 @@ body.dark-mode .theme-toggle-btn .icon-moon {
 
 .skills-categories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 20px;
 }
 
 .skill-category {
-  background: var(--skill-cat-bg);
-  border-radius: 20px;
-  padding: 35px;
-  border: 1px solid var(--skill-cat-border);
-  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 18px 18px 16px;
+  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
 }
 
 .skill-category:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.07);
+  transform: translateY(-2px);
+  border-color: rgba(245, 193, 108, 0.25);
+  background: rgba(255, 255, 255, 0.045);
 }
 
 .skill-category h3 {
   color: var(--accent-color);
-  margin-bottom: 25px;
-  font-size: 1.3rem;
+  margin-bottom: 12px;
+  font-size: 1.02rem;
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-
-.skill-item {
-  margin-bottom: 20px;
-}
-
-.skill-info {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
-}
-
-.skill-name {
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-.skill-percent {
-  color: var(--accent-color);
+  gap: 8px;
+  letter-spacing: 0.01em;
   font-weight: 600;
-  font-size: 0.9rem;
 }
 
-.skill-bar {
-  width: 100%;
-  height: 8px;
-  background: var(--skill-bar-bg);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.skill-fill {
-  height: 100%;
-  background: var(--gradient-1);
-  border-radius: 10px;
-  width: 0;
-  transition: width 1.5s ease;
-  position: relative;
-}
-
-.skill-fill::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 6px;
-  height: 100%;
-  background: white;
-  border-radius: 50%;
-  opacity: 0.6;
+.skill-category h3 .icon {
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  line-height: 1;
 }
 
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 8px;
 }
 
 .skill-tag {
-  padding: 8px 18px;
-  background: rgba(232, 97, 60, 0.12);
-  color: var(--accent-color);
-  border-radius: 25px;
-  font-size: 0.88rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  background: rgba(232, 97, 60, 0.08);
+  color: rgba(245, 240, 235, 0.9);
+  border-radius: 999px;
+  font-size: 0.78rem;
   font-weight: 500;
-  border: 1px solid rgba(232, 97, 60, 0.2);
-  transition: all 0.3s ease;
-  cursor: default;
+  border: 1px solid rgba(232, 97, 60, 0.14);
+  transition: all 0.25s ease;
+  line-height: 1.4;
 }
 
 .skill-tag:hover {
-  background: var(--primary-color);
-  color: white;
-  transform: scale(1.05);
+  background: rgba(232, 97, 60, 0.14);
+  border-color: rgba(232, 97, 60, 0.3);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .skills-categories {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .skill-category {
+    padding: 16px 16px 14px;
+  }
 }
 
 /* ============================================
@@ -1744,9 +1719,7 @@ body.dark-mode .theme-toggle-btn .icon-moon {
       <span>Report Automation</span><span class="separator">◆</span>
       <span>Data Visualization</span><span class="separator">◆</span>
       <span>Pivot Tables</span><span class="separator">◆</span>
-      <span>VBA Macros</span><span class="separator">◆</span>
       <span>Process Optimization</span><span class="separator">◆</span>
-      <span>ERP Systems</span><span class="separator">◆</span>
     </div>
     <div class="marquee-text">
       <span>MIS Executive</span><span class="separator">◆</span>
@@ -1758,9 +1731,7 @@ body.dark-mode .theme-toggle-btn .icon-moon {
       <span>Report Automation</span><span class="separator">◆</span>
       <span>Data Visualization</span><span class="separator">◆</span>
       <span>Pivot Tables</span><span class="separator">◆</span>
-      <span>VBA Macros</span><span class="separator">◆</span>
       <span>Process Optimization</span><span class="separator">◆</span>
-      <span>ERP Systems</span><span class="separator">◆</span>
     </div>
   </div>
 </div>
@@ -1878,37 +1849,59 @@ body.dark-mode .theme-toggle-btn .icon-moon {
 
     <div class="skills-categories">
       <div class="skill-category animate-on-scroll">
-        <h3><span class="icon">💻</span> Technical Skills</h3>
-        <div class="skill-item"><div class="skill-info"><span class="skill-name">MS Excel (Advanced)</span><span class="skill-percent">90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div></div>
-        <div class="skill-item"><div class="skill-info"><span class="skill-name">SQL</span><span class="skill-percent">80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div></div>
-        <div class="skill-item"><div class="skill-info"><span class="skill-name">Power BI</span><span class="skill-percent">75%</span></div><div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div></div>
-        <div class="skill-item"><div class="skill-info"><span class="skill-name">Python (Pandas)</span><span class="skill-percent">60%</span></div><div class="skill-bar"><div class="skill-fill" data-width="60%"></div></div></div>
-        <div class="skill-item"><div class="skill-info"><span class="skill-name">Google Sheets</span><span class="skill-percent">85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div></div>
-      </div>
-
-      <div class="skill-category animate-on-scroll">
-        <h3><span class="icon">📊</span> MIS & Reporting</h3>
-        <div class="skill-item"><div class="skill-info"><span class="skill-name">Data Analysis & Reporting</span><span class="skill-percent">85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div></div>
-        <div class="skill-item"><div class="skill-info"><span class="skill-name">Dashboard Creation</span><span class="skill-percent">80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div></div>
-        <div class="skill-item"><div class="skill-info"><span class="skill-name">VBA / Macros</span><span class="skill-percent">65%</span></div><div class="skill-bar"><div class="skill-fill" data-width="65%"></div></div></div>
-        <div class="skill-item"><div class="skill-info"><span class="skill-name">Pivot Tables & Charts</span><span class="skill-percent">90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div></div>
-      </div>
-
-      <div class="skill-category animate-on-scroll">
-        <h3><span class="icon">🤝</span> Soft Skills & Tools</h3>
+        <h3><span class="icon">•</span> Excel & MIS</h3>
         <div class="skill-tags">
-          <span class="skill-tag">Communication</span>
-          <span class="skill-tag">Problem Solving</span>
-          <span class="skill-tag">Time Management</span>
-          <span class="skill-tag">Team Collaboration</span>
-          <span class="skill-tag">Attention to Detail</span>
-          <span class="skill-tag">MS Word</span>
-          <span class="skill-tag">MS PowerPoint</span>
-          <span class="skill-tag">MS Access</span>
-          <span class="skill-tag">Google Workspace</span>
-          <span class="skill-tag">Data Entry</span>
-          <span class="skill-tag">Documentation</span>
-          <span class="skill-tag">Critical Thinking</span>
+          <span class="skill-tag">Excel</span>
+          <span class="skill-tag">PivotTables</span>
+          <span class="skill-tag">XLOOKUP/VLOOKUP</span>
+          <span class="skill-tag">SUMIFS/COUNTIFS</span>
+          <span class="skill-tag">MIS Reporting</span>
+          <span class="skill-tag">KPI Reporting</span>
+        </div>
+      </div>
+
+      <div class="skill-category animate-on-scroll">
+        <h3><span class="icon">•</span> Finance</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Receivables</span>
+          <span class="skill-tag">Payables</span>
+          <span class="skill-tag">Aging Analysis</span>
+          <span class="skill-tag">Bank Reconciliation</span>
+          <span class="skill-tag">Financial Analysis</span>
+        </div>
+      </div>
+
+      <div class="skill-category animate-on-scroll">
+        <h3><span class="icon">•</span> BI & Visualization</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Power BI</span>
+          <span class="skill-tag">Power Query</span>
+          <span class="skill-tag">Dashboard Development</span>
+        </div>
+      </div>
+
+      <div class="skill-category animate-on-scroll">
+        <h3><span class="icon">•</span> Database</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">SQL Server</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">SQL Queries</span>
+        </div>
+      </div>
+
+      <div class="skill-category animate-on-scroll">
+        <h3><span class="icon">•</span> Programming</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Pandas</span>
+        </div>
+      </div>
+
+      <div class="skill-category animate-on-scroll">
+        <h3><span class="icon">•</span> ERP & Tools</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Tally Prime</span>
+          <span class="skill-tag">GitHub</span>
         </div>
       </div>
     </div>
@@ -1923,7 +1916,6 @@ body.dark-mode .theme-toggle-btn .icon-moon {
       <span>SQL</span><span class="separator">→</span>
       <span>Power BI</span><span class="separator">→</span>
       <span>Python</span><span class="separator">→</span>
-      <span>VBA</span><span class="separator">→</span>
       <span>Pivot Tables</span><span class="separator">→</span>
       <span>Dashboards</span><span class="separator">→</span>
       <span>Data Cleaning</span><span class="separator">→</span>
@@ -1935,7 +1927,6 @@ body.dark-mode .theme-toggle-btn .icon-moon {
       <span>SQL</span><span class="separator">→</span>
       <span>Power BI</span><span class="separator">→</span>
       <span>Python</span><span class="separator">→</span>
-      <span>VBA</span><span class="separator">→</span>
       <span>Pivot Tables</span><span class="separator">→</span>
       <span>Dashboards</span><span class="separator">→</span>
       <span>Data Cleaning</span><span class="separator">→</span>
@@ -2083,7 +2074,7 @@ body.dark-mode .theme-toggle-btn .icon-moon {
         </div>
       </div>
 
-       <!-- PROJECT 6 -->
+      <!-- PROJECT 6 -->
       <div class="project-card show animate-on-scroll" data-category="Excel">
         <div class="project-thumbnail">
         <img src="assets/project thumbnail/financc MIS dashboard.png" alt="Finance MIS & Receivables Analysis Dashboard">
@@ -2429,20 +2420,7 @@ const observer = new IntersectionObserver((entries) => {
 animateElements.forEach(el => observer.observe(el));
 
 // ========================================
-// 5. SKILL BARS ANIMATION
-// ========================================
-const skillFills = document.querySelectorAll('.skill-fill');
-const skillObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.width = entry.target.getAttribute('data-width');
-    }
-  });
-}, { threshold: 0.3 });
-skillFills.forEach(fill => skillObserver.observe(fill));
-
-// ========================================
-// 6. ✅ DARK / LIGHT MODE TOGGLE
+// 5. ✅ DARK / LIGHT MODE TOGGLE
 // ========================================
 const themeToggle = document.getElementById('themeToggle');
 
